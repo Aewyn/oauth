@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymleaf.org/extras/spring-security">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Beveiligd</title>
 </head>
 <body>
-$END$
+ <h1 th:text="${gebruikersNaam}"></h1>
+<div sec:autorize="hasAuthority('ROLE_USER')">
+    Je hebt de authority ROLE_USER.
+</div>
 </body>
 </html>
